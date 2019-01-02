@@ -1,0 +1,24 @@
+@import '../../style/variables';
+
+.prediction-bar {
+  box-shadow: 0 -1px 9px 0 $shadow;
+  overflow: hidden;
+  z-index: 1;
+
+  .prediction-bar-segment {
+    transition: width 0.2s ease-out;
+  }
+
+  .prediction-bar-segment, .prediction-bar-message {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .prediction-bar-message {
+    color: $grey-dark;
+    background-color: $grey-lightest;
+    width: 100%;
+  }
+}
