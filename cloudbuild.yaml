@@ -1,0 +1,15 @@
+steps:
+
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['install']
+
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['run', 'build']
+
+# Delete all existing files from quickdraw bucket (to be replaced in next step)
+- name: 'gcr.io/cloud-builders/gsutil'
+  args: ['rm', 'gs://quickdraw.alisd.io/**']
+
+# Upload new files
+- name: 'gcr.io/cloud-builders/gsutil'
+  args: ['cp', '-r build/*', 'gs://quickdraw.alisd.io']
