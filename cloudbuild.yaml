@@ -9,11 +9,8 @@ steps:
 # Delete all existing files from quickdraw bucket (to be replaced in next step)
 # Ignore errors if command fails (if bucket is already empty)
 - name: 'gcr.io/cloud-builders/gsutil'
-  entrypoint: 'bash'
-  args:
-  - '-c'
-  - |
-    gsutil rm gs://quickdraw.alisd.io/** 2> /dev/null || true
+  entrypoint: '/bin/bash'
+  args: [ '-c', 'gsutil rm gs://quickdraw.alisd.io/** 2> /dev/null || true']
 
 # Upload new files
 - name: 'gcr.io/cloud-builders/gsutil'
