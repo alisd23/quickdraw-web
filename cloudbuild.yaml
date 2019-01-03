@@ -12,4 +12,4 @@ steps:
 
 # Upload new files
 - name: 'gcr.io/cloud-builders/gsutil'
-  args: ['cp', '-r build/*', 'gs://quickdraw.alisd.io']
+  args: ['cp', '-r', 'build/*', 'gs://quickdraw.alisd.io']
