@@ -11,6 +11,7 @@
     canvas {
       -webkit-user-drag: none;
       user-select: none;
+      touch-action: none;
       position: absolute;
       top: 0;
       left: 0;

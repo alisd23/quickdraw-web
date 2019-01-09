@@ -119,14 +119,14 @@ export class DrawCanvas extends Component<IDrawCanvasProps> {
   }
 
   // Specific TOUCH handlers - calls the draw methods below
-  private onTouchStart = (e: React.TouchEvent) => {
+  private onTouchStart = (e: TouchEvent) => {
     e.preventDefault();
     if (e.touches.length) {
       this.onDrawStart(e.touches[0]);
     }
   }
 
-  private onTouchMove = (e: React.TouchEvent) => {
+  private onTouchMove = (e: TouchEvent) => {
     e.preventDefault();
     if (e.touches.length) {
       this.onDraw(e.touches[0]);
@@ -180,7 +180,16 @@ export class DrawCanvas extends Component<IDrawCanvasProps> {
 
   public componentDidMount() {
     this.canvasContext = this.canvas && this.canvas.getContext('2d');
+
+    this.canvas!.addEventListener('touchmove', this.onTouchMove, { passive: false });
+    this.canvas!.addEventListener('touchstart', this.onTouchStart, { passive: false });
+
     this.clear();
+  }
+
+  public componentWillUnmount() {
+    this.canvas!.removeEventListener('touchmove', this.onTouchMove);
+    this.canvas!.removeEventListener('touchstart', this.onTouchStart);
   }
 
   public clear = () => {
@@ -210,9 +219,7 @@ export class DrawCanvas extends Component<IDrawCanvasProps> {
         onMouseUp={this.onDrawStop}
         onMouseLeave={this.onDrawStop}
         onMouseMove={this.onDraw}
-        // Touch events
-        onTouchStart={this.onTouchStart}
-        onTouchMove={this.onTouchMove}
+        // Touch events (excluding touch and start)
         onTouchEnd={this.onTouchEnd}
         onTouchCancel={this.onTouchEnd}
       />
