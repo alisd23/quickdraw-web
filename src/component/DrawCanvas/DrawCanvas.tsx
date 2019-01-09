@@ -202,9 +202,6 @@ export class DrawCanvas extends Component<IDrawCanvasProps> {
     return (
       <canvas
         ref={el => (this.canvas = el)}
-        style={{
-          touchAction: 'none',
-        }}
         width={this.props.width}
         height={this.props.height}
         // Mouse events
