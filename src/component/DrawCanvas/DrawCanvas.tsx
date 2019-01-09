@@ -219,6 +219,6 @@ export class DrawCanvas extends Component<IDrawCanvasProps> {
         onTouchEnd={this.onTouchEnd}
         onTouchCancel={this.onTouchEnd}
       />
-    )
+    );
   }
 }
