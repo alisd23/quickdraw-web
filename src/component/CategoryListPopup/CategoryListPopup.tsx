@@ -72,7 +72,7 @@ export const CategoryListPopup: FunctionComponent = () => {
 
   return (
     <Popup
-      trigger={<Button basic>See Categories</Button>}
+      trigger={<Button basic>Categories</Button>}
       content={<CategoryPopupContent {...state} />}
       position='top right'
       on='click'

@@ -31,7 +31,6 @@ const PredictionBarSegment: FunctionComponent<IPredictionBarSegmentProps> = (pro
 };
 
 interface IPredictionBarProps {
-  height?: number;
   predictions: IPrediction[] | null;
   colours: string[];
 }
@@ -59,7 +58,6 @@ export const PredictionBar: FunctionComponent<IPredictionBarProps> = (props) => 
   return (
     <div
       className="prediction-bar"
-      style={{ height: props.height || 0 }}
     >
       {
         props.predictions

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { FunctionComponent, useRef, useState } from 'react';
 import { throttle } from 'lodash';
 import { default as axios } from 'axios';
-import { Button, Segment } from 'semantic-ui-react';
+import { Button, Segment, Icon } from 'semantic-ui-react';
 
 import { IBoundingBox, IPrediction } from '../../type';
 import { DrawCanvas } from '../DrawCanvas';
@@ -114,8 +114,8 @@ export const PredictPage: FunctionComponent = () => {
         </WindowResize>
         <div className="canvas-actions">
           <Segment raised>
-            <Button onClick={onClear}>
-              Clear
+            <Button icon onClick={onClear}>
+              <Icon name='erase' />
             </Button>
             <CategoryListPopup />
           </Segment>
@@ -134,7 +134,6 @@ export const PredictPage: FunctionComponent = () => {
         }
       </div>
       <PredictionBar
-        height={48}
         predictions={predictions}
         colours={colours}
       />

@@ -25,12 +25,20 @@
   .prediction-bar {
     height: 50px;
     background-color: #eeeeee;
+
+    @media (max-width: 500px) {
+      height: 30px;
+    }
   }
 
   .canvas-actions {
     position: absolute;
-    bottom: 20px;
-    right: 20px
+    left: 0;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
   }
 
   .canvas-predictions-legend {
