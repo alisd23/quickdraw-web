@@ -120,15 +120,15 @@ export class DrawCanvas extends Component<IDrawCanvasProps> {
 
   // Specific TOUCH handlers - calls the draw methods below
   private onTouchStart = (e: React.TouchEvent) => {
+    e.preventDefault();
     if (e.touches.length) {
-      e.preventDefault();
       this.onDrawStart(e.touches[0]);
     }
   }
 
   private onTouchMove = (e: React.TouchEvent) => {
+    e.preventDefault();
     if (e.touches.length) {
-      e.preventDefault();
       this.onDraw(e.touches[0]);
     }
   }
