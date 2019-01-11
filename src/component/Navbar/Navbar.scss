@@ -5,6 +5,14 @@
   border-bottom: 1px solid $grey-lightest;
   box-shadow: 0 2px 20px 0 $shadow;
   z-index: 1;
+
+  @media (max-width: $mobile-max-width) {
+    padding: 12px 0;
+    
+    &-title {
+      font-size: 24px;
+    }
+  }
 }
 
 .navbar {

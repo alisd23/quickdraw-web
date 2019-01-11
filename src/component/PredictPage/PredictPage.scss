@@ -1,3 +1,5 @@
+@import '../../style/variables';
+
 .predict-page {
   flex: 1;
   display: flex;
@@ -26,7 +28,7 @@
     height: 50px;
     background-color: #eeeeee;
 
-    @media (max-width: 500px) {
+    @media (max-width: $mobile-max-width) {
       height: 30px;
     }
   }
@@ -35,15 +37,33 @@
     position: absolute;
     left: 0;
     right: 0;
-    top: 0;
+    top: 15px;
     display: flex;
     justify-content: center;
     z-index: 1;
+
+    @media (max-width: $mobile-max-width) {
+      top: 9px;
+    }
+
+    > * + * {
+      margin-left: 6px !important;
+    }
+
+    > * {
+      box-shadow: $segment-shadow !important;
+    }
   }
 
   .canvas-predictions-legend {
     position: absolute;
     bottom: 20px;
-    left: 20px
+    left: 20px;
+    
+    @media (max-width: $mobile-max-width) {
+      bottom: 6px;
+      left: 6px;
+      right: 6px;
+    }
   }
 }

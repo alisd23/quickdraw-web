@@ -113,12 +113,10 @@ export const PredictPage: FunctionComponent = () => {
           }
         </WindowResize>
         <div className="canvas-actions">
-          <Segment raised>
-            <Button icon onClick={onClear}>
-              <Icon name='erase' />
-            </Button>
-            <CategoryListPopup />
-          </Segment>
+          <Button icon onClick={onClear}>
+            <Icon name='erase' />
+          </Button>
+          <CategoryListPopup />
         </div>
         {
           predictions && predictions.length && (

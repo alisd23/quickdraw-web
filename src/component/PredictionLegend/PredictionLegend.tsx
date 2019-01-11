@@ -34,7 +34,7 @@ interface IPredictionLegendRowProps {
 
 const PredictionLegendRow: FunctionComponent<IPredictionLegendRowProps> = (props) => {
   return (
-    <Fragment>
+    <div className="prediction-legend-item">
       <div
         className="prediction-legend-colour"
         style={{
@@ -43,6 +43,6 @@ const PredictionLegendRow: FunctionComponent<IPredictionLegendRowProps> = (props
       />
       <span className="prediction-legend-class">{Case.title(props.class)}</span>
       <span className="prediction-legend-score">{props.score}%</span>
-    </Fragment>
+    </div>
   );
 };
